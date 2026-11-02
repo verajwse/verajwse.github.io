@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hej! I'm Vera</title>
+<meta name="description" content="Vera from Skåne, Sweden: a little about me, what fika is, and some of my favorite Swedish fika recipes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#E3F1F2;
+    --sky-deep:#B3D8DC;
+    --lake:#58B9C0;
+    --pine:#2C6A6D;
+    --falu:#2C6A6D;
+    --apricot:#E09A64;
+    --saffron:#E09A64;
+    --ink:#2F4A5E;
+    --ink-soft:#45667E;
+    --paper:#FBFAF6;
+    --line:#B3D8DC;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--sky);color:var(--ink);
+    font-family:"Nunito",system-ui,sans-serif;font-size:1.0625rem;line-height:1.65;
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--falu)}
+  a:focus-visible,summary:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:6px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--sky-deep)}
+  .hero img{width:100%;height:auto;aspect-ratio:3/1;min-height:230px;object-fit:cover;object-position:30% 60%}
+  .intro{max-width:44rem;margin:0 auto;padding:1.5rem 1rem 0;color:var(--pine)}
+  .greeting{margin:0;font-weight:800;font-size:clamp(1.05rem,2.6vw,1.4rem);letter-spacing:.01em}
+  .greeting span{display:inline-block;margin-right:.6em}
+  .name{
+    color:var(--apricot);margin:.05em 0 0;font-family:"Yellowtail",cursive;font-weight:400;
+    font-size:clamp(4.5rem,15vw,8rem);line-height:1;transform:rotate(-4deg);transform-origin:left;
+  }
+  .from{margin:.35rem 0 0;font-weight:600;font-size:clamp(.95rem,2.2vw,1.2rem)}
+
+  /* ---------- Layout ---------- */
+  main{max-width:44rem;margin:0 auto;padding:0 1rem 3rem}
+  section{margin-top:2.75rem}
+  h2{
+    font-family:"Yellowtail",cursive;font-weight:400;color:var(--falu);
+    font-size:clamp(2.4rem,7vw,3.2rem);line-height:1.1;margin:0 0 .75rem;
+  }
+  p{margin:0 0 1rem}
+
+  /* About */
+  .about{
+    background:var(--paper);border-radius:22px;padding:clamp(1.25rem,4vw,2.25rem);
+    margin-top:2rem;position:relative;box-shadow:0 18px 40px -24px rgba(44,74,94,.45);
+  }
+  .portrait{
+    float:right;width:clamp(96px,26vw,150px);aspect-ratio:1;border-radius:50%;
+    margin:0 0 .75rem 1.25rem;position:relative;overflow:hidden;
+    background:var(--saffron);border:5px solid #fff;box-shadow:0 0 0 2px var(--line);
+    display:grid;place-items:center;font-family:"Yellowtail",cursive;font-size:clamp(3rem,9vw,4.5rem);color:#fff;
+  }
+  /* Put a file named vera.jpg next to index.html and it shows here */
+  .portrait::after{content:"";position:absolute;inset:0;background:url("vera.jpg") center/cover no-repeat}
+  .about h2{margin-top:0}
+  .langs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.1rem;padding:0;list-style:none;clear:none}
+  .langs li{background:var(--sky);border-radius:999px;padding:.2rem .85rem;font-weight:600;font-size:.95rem;color:var(--ink-soft)}
+  .contact{
+    clear:both;margin-top:1.5rem;padding-top:1.25rem;border-top:2px dashed var(--line);
+  }
+  .button{
+    display:inline-block;background:var(--falu);color:#fff;text-decoration:none;font-weight:800;
+    padding:.75rem 1.4rem;border-radius:999px;margin-top:.25rem;
+  }
+  .button:hover{background:#225457}
+  .email{display:block;margin-top:.6rem;font-size:.95rem;color:var(--ink-soft);word-break:break-all}
+
+  /* Fika */
+  .fika p:first-of-type::first-letter{
+    float:left;font-family:"Yellowtail",cursive;color:var(--apricot);font-size:3.6em;line-height:.85;margin:.08em .12em 0 0;
+  }
+  .word{
+    display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;
+    background:var(--pine);color:#fff;border-radius:18px;padding:1rem 1.25rem;margin:1.5rem 0;
+  }
+  .word b{font-family:"Yellowtail",cursive;font-weight:400;font-size:2rem;line-height:1}
+  .word span{opacity:.92}
+
+  /* Recipes */
+  .recipes-intro{color:var(--ink-soft)}
+  details{
+    background:var(--paper);border-radius:16px;margin:0 0 .85rem;
+    border:2px solid transparent;transition:border-color .2s;
+  }
+  details[open]{border-color:var(--saffron)}
+  summary{
+    cursor:pointer;list-style:none;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;
+  }
+  summary::-webkit-details-marker{display:none}
+  .r-name{font-weight:800;font-size:1.15rem;line-height:1.3}
+  .r-sv{display:block;font-weight:400;font-style:italic;font-size:.95rem;color:var(--ink-soft)}
+  .r-meta{margin-left:auto;margin-right:-.5rem;font-size:.85rem;color:var(--ink-soft);text-align:right;white-space:nowrap}
+  .chev{width:22px;height:22px;flex:none;margin-left:auto;transition:transform .25s;color:var(--apricot)}
+  details[open] .chev{transform:rotate(180deg)}
+  .r-body{padding:0 1.25rem 1.25rem}
+  .r-body h3{font-size:1rem;margin:1rem 0 .4rem;color:var(--pine)}
+  .r-body ul{margin:0;padding-left:1.15rem}
+  .r-body ol{margin:0;padding-left:1.4rem}
+  .r-body li{margin-bottom:.35rem}
+  .r-body li::marker{color:var(--apricot);font-weight:800}
+  .amt{font-weight:700}
+  .us{color:var(--ink-soft);font-size:.92em}
+  .tip{background:var(--sky);border-radius:12px;padding:.7rem 1rem;margin-top:1rem;font-size:.95rem}
+
+  footer{text-align:center;padding:2rem 1rem 3rem;color:var(--ink-soft);font-size:.95rem}
+  footer .sign{font-family:"Yellowtail",cursive;font-size:2rem;color:var(--apricot);display:block}
+
+  @media (max-width:520px){
+    .r-meta{display:none}
+    .portrait{float:none;margin:0 0 1rem}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="sweden.jpg" width="2172" height="724" alt="Illustration of Stockholm by the water, with a fika table of cinnamon buns and coffee in the foreground">
+</header>
+<div class="intro">
+  <p class="greeting"><span lang="sv">Hej!</span><span lang="ko">안녕하세요!</span><span lang="es">¡Hola!</span></p>
+  <h1 class="name">Vera</h1>
+  <p class="from">from Skåne, Sweden</p>
+</div>
+
+<main>
+  <section class="about" aria-labelledby="about-h">
+    <div class="portrait" aria-hidden="true">V</div>
+    <h2 id="about-h">About me</h2>
+    <p>Hi! My name is Vera, and I'm 21 years old. I live in Skåne, the southernmost region of Sweden. I work part-time and serve as a pioneer.</p>
+    <p>One of my biggest interests is languages, and I'm currently studying Korean and Spanish. I love learning about different cultures and discovering new ways to connect with people from around the world.</p>
+    <ul class="langs" aria-label="Languages">
+      <li>Swedish</li><li>English</li><li>Korean (learning)</li><li>Spanish (learning)</li>
+    </ul>
+    <p>In my free time, I enjoy music, cooking, baking, playing the ukulele, and crocheting. I also love spending time with friends, trying new recipes, and picking up new skills.</p>
+    <p>I'm so excited to be part of this international convention and to get to know brothers and sisters from many different countries.</p>
+    <div class="contact">
+      <p><strong>It was lovely meeting you!</strong> Feel free to get in touch.</p>
+      <a class="button" href="mailto:vera.jw.se@gmail.com">Email me</a>
+      <span class="email">vera.jw.se@gmail.com</span>
+    </div>
+  </section>
+
+  <section class="fika" aria-labelledby="fika-h">
+    <h2 id="fika-h">What is fika?</h2>
+    <p>If there is one Swedish tradition I would love to share, it's fika. Many countries have coffee breaks, but fika is hard to translate into other languages. It's about much more than coffee and pastries. It's about taking a moment to slow down, enjoy good company, and spend time together.</p>
+    <div class="word">
+      <b lang="sv">bakluckefika</b>
+      <span>"Tailgate fika": coffee, tea, and homemade treats around the trunk of a car.</span>
+    </div>
+    <p>Fika is also an important part of our ministry. After a morning of preaching, it's common to take a break together, enjoy some coffee and something sweet, and encourage one another. We even gather around the trunk of a car for <i lang="sv">bakluckefika</i> before continuing in the ministry.</p>
+    <p>Since I love baking, fika has always been one of my favorite Swedish traditions. To give you a small taste of Sweden, I've included some of my favorite recipes here. I hope you enjoy making them as much as I do!</p>
+  </section>
+
+  <section aria-labelledby="recipes-h">
+    <h2 id="recipes-h">My fika recipes</h2>
+    <p class="recipes-intro">Tap a recipe to open it. Swedish measurements first, US cups in grey.</p>
+
+    <details>
+      <summary>
+        <span><span class="r-name">Cinnamon buns</span><span class="r-sv" lang="sv">Kanelbullar</span></span>
+        <span class="r-meta">About 25 buns<br>2 hours</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="r-body">
+        <h3>Dough</h3>
+        <ul>
+          <li><span class="amt">75 g</span> butter <span class="us">(⅓ cup)</span></li>
+          <li><span class="amt">2½ dl</span> milk <span class="us">(1 cup)</span></li>
+          <li><span class="amt">25 g</span> fresh yeast <span class="us">(or 1 packet / 7 g dry yeast)</span></li>
+          <li><span class="amt">½ dl</span> sugar <span class="us">(¼ cup)</span></li>
+          <li><span class="amt">½ tsp</span> salt</li>
+          <li><span class="amt">1 tsp</span> ground cardamom</li>
+          <li><span class="amt">about 7 dl</span> all-purpose flour <span class="us">(about 3½ cups)</span></li>
+        </ul>
+        <h3>Filling</h3>
+        <ul>
+          <li><span class="amt">75 g</span> soft butter <span class="us">(⅓ cup)</span></li>
+          <li><span class="amt">½ dl</span> sugar <span class="us">(¼ cup)</span></li>
+          <li><span class="amt">1 tbsp</span> ground cinnamon</li>
+        </ul>
+        <h3>Topping</h3>
+        <ul>
+          <li><span class="amt">1</span> egg, beaten</li>
+          <li>Pearl sugar <span class="us">(or coarse sugar)</span></li>
+        </ul>
+        <h3>How to make them</h3>
+        <ol>
+          <li>Melt the butter, add the milk and warm it to about 37 °C (98 °F), just finger-warm.</li>
+          <li>Crumble the yeast into a bowl and stir in a little of the warm milk until it dissolves. Add the rest of the milk, the sugar, salt and cardamom.</li>
+          <li>Add most of the flour and knead for about 10 minutes until the dough is smooth and only slightly sticky. Add more flour if needed.</li>
+          <li>Cover and let it rise for about 40 minutes.</li>
+          <li>Roll the dough out into a rectangle, about 30 × 40 cm (12 × 16 in). Spread the soft butter over it and sprinkle with sugar and cinnamon.</li>
+          <li>Roll it up from the long side and cut into about 25 slices. Place them in paper cups or on a baking tray.</li>
+          <li>Let them rise for another 30 minutes. Brush with egg and sprinkle with pearl sugar.</li>
+          <li>Bake in the middle of the oven at 225 °C (435 °F) for 8–10 minutes until golden.</li>
+        </ol>
+        <p class="tip">Swedes celebrate <i lang="sv">Kanelbullens dag</i>, Cinnamon Bun Day, every year on 4 October.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span><span class="r-name">Sticky chocolate cake</span><span class="r-sv" lang="sv">Kladdkaka</span></span>
+        <span class="r-meta">8 slices<br>30 minutes</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="r-body">
+        <h3>Ingredients</h3>
+        <ul>
+          <li><span class="amt">100 g</span> butter <span class="us">(7 tbsp)</span></li>
+          <li><span class="amt">2</span> eggs</li>
+          <li><span class="amt">2½ dl</span> sugar <span class="us">(1 cup)</span></li>
+          <li><span class="amt">1½ dl</span> all-purpose flour <span class="us">(⅔ cup)</span></li>
+          <li><span class="amt">4 tbsp</span> cocoa powder</li>
+          <li><span class="amt">1 tsp</span> vanilla sugar <span class="us">(or ½ tsp vanilla extract)</span></li>
+          <li>A pinch of salt</li>
+        </ul>
+        <h3>How to make it</h3>
+        <ol>
+          <li>Heat the oven to 175 °C (350 °F). Butter a round cake pan, about 22–24 cm (9 in), and dust it with breadcrumbs or cocoa.</li>
+          <li>Melt the butter and let it cool slightly.</li>
+          <li>Whisk the eggs and sugar together just until combined. Don't whip it fluffy.</li>
+          <li>Stir in the flour, cocoa, vanilla and salt, then the melted butter.</li>
+          <li>Pour into the pan and bake for 15–20 minutes. The middle should still be soft and sticky.</li>
+          <li>Let it cool completely. It sets as it cools.</li>
+        </ol>
+        <p class="tip">Serve with whipped cream or vanilla ice cream, and fresh berries if you have them.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span><span class="r-name">Chocolate balls</span><span class="r-sv" lang="sv">Chokladbollar</span></span>
+        <span class="r-meta">About 20 balls<br>No baking</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </summary>
+      <div class="r-body">
+        <h3>Ingredients</h3>
+        <ul>
+          <li><span class="amt">100 g</span> soft butter <span class="us">(7 tbsp)</span></li>
+          <li><span class="amt">1 dl</span> sugar <span class="us">(scant ½ cup)</span></li>
+          <li><span class="amt">2 tsp</span> vanilla sugar <span class="us">(or 1 tsp vanilla extract)</span></li>
+          <li><span class="amt">3 tbsp</span> cocoa powder</li>
+          <li><span class="amt">3 dl</span> rolled oats <span class="us">(1¼ cups)</span></li>
+          <li><span class="amt">2 tbsp</span> cold coffee</li>
+          <li>Desiccated coconut or pearl sugar, for rolling</li>
+        </ul>
+        <h3>How to make them</h3>
+        <ol>
+          <li>Mix the butter, sugar, vanilla and cocoa until smooth.</li>
+          <li>Stir in the oats and the coffee.</li>
+          <li>Roll into small balls and roll them in coconut or pearl sugar.</li>
+          <li>Chill in the fridge for at least 30 minutes before serving.</li>
+        </ol>
+        <p class="tip">Kids in Sweden often make these as their very first "baking." No oven needed.</p>
+      </div>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <span class="sign">Tack!</span>
+  Thank you for visiting. Made with love and fika in Skåne.
+</footer>
+
+</body>
+</html>
