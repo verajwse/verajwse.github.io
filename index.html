@@ -148,10 +148,18 @@
     </ul>
     <p>In my free time, I enjoy music, cooking, baking, playing the ukulele, and crocheting. I also love spending time with friends, trying new recipes, and picking up new skills.</p>
     <p>I'm so excited to be part of this international convention and to get to know brothers and sisters from many different countries.</p>
-    <div class="contact">
+    <div class="contact" id="contact">
       <p><strong>It was lovely meeting you!</strong> Feel free to get in touch.</p>
-      <a class="button" href="mailto:vera.jw.se@gmail.com">Email me</a>
-      <span class="email">vera.jw.se@gmail.com</span>
+      <a class="button" id="mail-btn" href="#contact">Email me</a>
+      <span class="email" id="mail-text">vera.jw.se [at] gmail [dot] com</span>
+      <script>
+        /* The address is put together here so spam bots reading the page source don't find it */
+        (function(){
+          var a=['vera','jw','se'].join('.')+String.fromCharCode(64)+['gmail','com'].join('.');
+          document.getElementById('mail-btn').href='mail'+'to:'+a;
+          document.getElementById('mail-text').textContent=a;
+        })();
+      </script>
     </div>
   </section>
 
