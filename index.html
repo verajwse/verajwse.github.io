@@ -10,36 +10,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Yellowtail&display=swap" rel="stylesheet">
 <style>
   :root{
-    --sky:#E3F1F2;
-    --sky-deep:#B3D8DC;
-    --lake:#58B9C0;
-    --pine:#2C6A6D;
-    --falu:#2C6A6D;
-    --apricot:#E09A64;
-    --saffron:#E09A64;
-    --ink:#2F4A5E;
-    --ink-soft:#45667E;
-    --paper:#FBFAF6;
-    --line:#B3D8DC;
+    /* Vera's palette */
+    --cream:#FFF8E7;   /* benvit */
+    --sage:#A8B89F;    /* ljusgrön */
+    --moss:#6F7F5F;    /* mörkgrön */
+    --bark:#6B4F3A;    /* brun */
+    /* derived */
+    --ink:#3E3328;
+    --ink-soft:#6B4F3A;
+    --paper:#FFFDF8;
+    --tint:#E9E8D5;
+    --line:#A8B89F;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
-    margin:0;background:var(--sky);color:var(--ink);
+    margin:0;background:var(--cream);color:var(--ink);
     font-family:"Nunito",system-ui,sans-serif;font-size:1.0625rem;line-height:1.65;
   }
   img{max-width:100%;display:block}
-  a{color:var(--falu)}
-  a:focus-visible,summary:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:6px}
+  a{color:var(--moss)}
+  a:focus-visible,summary:focus-visible{outline:3px solid var(--bark);outline-offset:3px;border-radius:6px}
 
   /* ---------- Hero ---------- */
-  .hero{background:var(--sky-deep)}
+  .hero{background:var(--sage)}
   .hero img{width:100%;height:auto;aspect-ratio:3/1;min-height:230px;object-fit:cover;object-position:30% 60%}
-  .intro{max-width:44rem;margin:0 auto;padding:1.5rem 1rem 0;color:var(--pine)}
+  .intro{max-width:44rem;margin:0 auto;padding:1.5rem 1rem 0;color:var(--moss)}
   .greeting{margin:0;font-weight:800;font-size:clamp(1.05rem,2.6vw,1.4rem);letter-spacing:.01em}
   .greeting span{display:inline-block;margin-right:.6em}
   .name{
-    color:var(--apricot);margin:.05em 0 0;font-family:"Yellowtail",cursive;font-weight:400;
+    color:var(--bark);margin:.05em 0 0;font-family:"Yellowtail",cursive;font-weight:400;
     font-size:clamp(4.5rem,15vw,8rem);line-height:1;transform:rotate(-4deg);transform-origin:left;
   }
   .from{margin:.35rem 0 0;font-weight:600;font-size:clamp(.95rem,2.2vw,1.2rem)}
@@ -48,7 +48,7 @@
   main{max-width:44rem;margin:0 auto;padding:0 1rem 3rem}
   section{margin-top:2.75rem}
   h2{
-    font-family:"Yellowtail",cursive;font-weight:400;color:var(--falu);
+    font-family:"Yellowtail",cursive;font-weight:400;color:var(--moss);
     font-size:clamp(2.4rem,7vw,3.2rem);line-height:1.1;margin:0 0 .75rem;
   }
   p{margin:0 0 1rem}
@@ -56,47 +56,47 @@
   /* About */
   .about{
     background:var(--paper);border-radius:22px;padding:clamp(1.25rem,4vw,2.25rem);
-    margin-top:2rem;position:relative;box-shadow:0 18px 40px -24px rgba(44,74,94,.45);
+    margin-top:2rem;position:relative;box-shadow:0 18px 40px -24px rgba(107,79,58,.45);
   }
   .portrait{
     float:right;width:clamp(96px,26vw,150px);aspect-ratio:1;border-radius:50%;
     margin:0 0 .75rem 1.25rem;position:relative;overflow:hidden;
-    background:var(--saffron);border:5px solid #fff;box-shadow:0 0 0 2px var(--line);
+    background:var(--sage);border:5px solid #fff;box-shadow:0 0 0 2px var(--line);
     display:grid;place-items:center;font-family:"Yellowtail",cursive;font-size:clamp(3rem,9vw,4.5rem);color:#fff;
   }
   /* Put a file named vera.jpg next to index.html and it shows here */
   .portrait::after{content:"";position:absolute;inset:0;background:url("vera.jpg") center/cover no-repeat}
   .about h2{margin-top:0}
   .langs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.1rem;padding:0;list-style:none;clear:none}
-  .langs li{background:var(--sky);border-radius:999px;padding:.2rem .85rem;font-weight:600;font-size:.95rem;color:var(--ink-soft)}
+  .langs li{background:var(--tint);border-radius:999px;padding:.2rem .85rem;font-weight:600;font-size:.95rem;color:var(--ink-soft)}
   .contact{
     clear:both;margin-top:1.5rem;padding-top:1.25rem;border-top:2px dashed var(--line);
   }
   .button{
-    display:inline-block;background:var(--falu);color:#fff;text-decoration:none;font-weight:800;
+    display:inline-block;background:var(--bark);color:#fff;text-decoration:none;font-weight:800;
     padding:.75rem 1.4rem;border-radius:999px;margin-top:.25rem;
   }
-  .button:hover{background:#225457}
+  .button:hover{background:#563F2E}
   .email{display:block;margin-top:.6rem;font-size:.95rem;color:var(--ink-soft);word-break:break-all}
 
   /* Fika */
   .fika p:first-of-type::first-letter{
-    float:left;font-family:"Yellowtail",cursive;color:var(--apricot);font-size:3.6em;line-height:.85;margin:.08em .12em 0 0;
+    float:left;font-family:"Yellowtail",cursive;color:var(--bark);font-size:3.6em;line-height:.85;margin:.08em .12em 0 0;
   }
   .word{
     display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;
-    background:var(--pine);color:#fff;border-radius:18px;padding:1rem 1.25rem;margin:1.5rem 0;
+    background:var(--sage);color:var(--ink);border-radius:18px;padding:1rem 1.25rem;margin:1.5rem 0;
   }
-  .word b{font-family:"Yellowtail",cursive;font-weight:400;font-size:2rem;line-height:1}
+  .word b{color:var(--bark);font-family:"Yellowtail",cursive;font-weight:400;font-size:2rem;line-height:1}
   .word span{opacity:.92}
 
   /* Recipes */
   .recipes-intro{color:var(--ink-soft)}
   details{
     background:var(--paper);border-radius:16px;margin:0 0 .85rem;
-    border:2px solid transparent;transition:border-color .2s;
+    border:2px solid var(--tint);transition:border-color .2s;
   }
-  details[open]{border-color:var(--saffron)}
+  details[open]{border-color:var(--sage)}
   summary{
     cursor:pointer;list-style:none;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;
   }
@@ -104,20 +104,20 @@
   .r-name{font-weight:800;font-size:1.15rem;line-height:1.3}
   .r-sv{display:block;font-weight:400;font-style:italic;font-size:.95rem;color:var(--ink-soft)}
   .r-meta{margin-left:auto;margin-right:-.5rem;font-size:.85rem;color:var(--ink-soft);text-align:right;white-space:nowrap}
-  .chev{width:22px;height:22px;flex:none;margin-left:auto;transition:transform .25s;color:var(--apricot)}
+  .chev{width:22px;height:22px;flex:none;margin-left:auto;transition:transform .25s;color:var(--bark)}
   details[open] .chev{transform:rotate(180deg)}
   .r-body{padding:0 1.25rem 1.25rem}
-  .r-body h3{font-size:1rem;margin:1rem 0 .4rem;color:var(--pine)}
+  .r-body h3{font-size:1rem;margin:1rem 0 .4rem;color:var(--moss)}
   .r-body ul{margin:0;padding-left:1.15rem}
   .r-body ol{margin:0;padding-left:1.4rem}
   .r-body li{margin-bottom:.35rem}
-  .r-body li::marker{color:var(--apricot);font-weight:800}
+  .r-body li::marker{color:var(--bark);font-weight:800}
   .amt{font-weight:700}
   .us{color:var(--ink-soft);font-size:.92em}
-  .tip{background:var(--sky);border-radius:12px;padding:.7rem 1rem;margin-top:1rem;font-size:.95rem}
+  .tip{background:var(--tint);border-radius:12px;padding:.7rem 1rem;margin-top:1rem;font-size:.95rem}
 
   footer{text-align:center;padding:2rem 1rem 3rem;color:var(--ink-soft);font-size:.95rem}
-  footer .sign{font-family:"Yellowtail",cursive;font-size:2rem;color:var(--apricot);display:block}
+  footer .sign{font-family:"Yellowtail",cursive;font-size:2rem;color:var(--bark);display:block}
 
   @media (max-width:520px){
     .r-meta{display:none}
@@ -168,7 +168,7 @@
 
   <section aria-labelledby="recipes-h">
     <h2 id="recipes-h">My fika recipes</h2>
-    <p class="recipes-intro">Tap a recipe to open it. Swedish measurements first, US cups in grey.</p>
+    <p class="recipes-intro">Tap a recipe to open it. Swedish measurements first, US cups in brackets.</p>
 
     <details>
       <summary>
